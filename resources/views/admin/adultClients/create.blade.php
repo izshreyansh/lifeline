@@ -119,6 +119,11 @@
                     @endif
                     <span class="help-block">{{ trans('cruds.adultClient.fields.medium_helper') }}</span>
                 </div>
+
+                <h4 class="card-title">
+                    <i class="fa fa-ticket"></i>
+                    Counselling Report
+                </h4>
                 <div class="form-group">
                     <label for="counselling_notes">{{ trans('cruds.adultClient.fields.counselling_notes') }}</label>
                     <textarea class="form-control ckeditor {{ $errors->has('counselling_notes') ? 'is-invalid' : '' }}" name="counselling_notes" id="counselling_notes">{!! old('counselling_notes') !!}</textarea>
