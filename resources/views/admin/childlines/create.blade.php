@@ -156,7 +156,8 @@
                 </div>
                 <div class="form-group">
                     <label class="required" for="district">{{ trans('cruds.childline.fields.district') }}</label>
-                    <input class="form-control {{ $errors->has('district') ? 'is-invalid' : '' }}" type="text" name="district" id="district" value="{{ old('district', '') }}" required>
+                    <select class="form-control {{ $errors->has('district') ? 'is-invalid' : '' }}" type="text" name="district" id="district" value="{{ old('district', '') }}" required>
+                    </select>
                     @if($errors->has('district'))
                         <div class="invalid-feedback">
                             {{ $errors->first('district') }}
@@ -354,6 +355,19 @@
                     }
                 );
             }
+
+            var districts = [];
+
+            $.getJSON('/js/province_district.json').done((data)=> {districts =  data});
+
+            $( "#province" ).change(function() {
+
+                $("#district option").remove();
+
+                $.each(districts[$(this).val()], function(key, value) {
+                    $("#district").append($("<option />").val(value).text(value));
+                });
+            });
         });
     </script>
 
