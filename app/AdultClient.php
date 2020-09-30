@@ -64,6 +64,7 @@ class AdultClient extends Model implements HasMedia
         'incident_description',
         'follow_up',
         'follow_up_phone',
+        'time',
         'referred_to',
         'created_at',
         'updated_at',

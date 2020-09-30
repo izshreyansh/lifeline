@@ -70,8 +70,8 @@ return [
         'title_singular' => 'Crm',
     ],
     'adultClient'    => [
-        'title'          => 'Adult Clients',
-        'title_singular' => 'Adult Client',
+        'title'          => 'Lifeline',
+        'title_singular' => 'Lifeline',
         'fields'         => [
             'id'                          => 'ID',
             'id_helper'                   => '',
@@ -109,6 +109,8 @@ return [
             'follow_up_helper'            => '',
             'follow_up_phone'             => 'Follow Up Phone',
             'follow_up_phone_helper'      => '',
+            'time'                        => 'Time',
+            'time_helper'                 => '',
             'referred_to'                 => 'Referred To',
             'referred_to_helper'          => '',
         ],

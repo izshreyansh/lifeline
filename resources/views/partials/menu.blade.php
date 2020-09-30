@@ -37,9 +37,7 @@
                     @can('role_access')
                         <li class="c-sidebar-nav-item">
                             <a href="{{ route("admin.roles.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/roles") || request()->is("admin/roles/*") ? "active" : "" }}">
-                                <i class="fa-fw fas fa-briefcase c-sidebar-nav-icon">
-
-                                </i>
+                                <i class="fa-fw fas fa-briefcase c-sidebar-nav-icon"></i>
                                 {{ trans('cruds.role.title') }}
                             </a>
                         </li>

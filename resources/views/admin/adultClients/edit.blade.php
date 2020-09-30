@@ -178,6 +178,16 @@
                     <span class="help-block">{{ trans('cruds.adultClient.fields.follow_up_phone_helper') }}</span>
                 </div>
                 <div class="form-group">
+                    <label for="time">{{ trans('cruds.adultClient.fields.time') }}</label>
+                    <input class="form-control {{ $errors->has('time') ? 'is-invalid' : '' }}" type="text" name="time" id="time" value="{{ old('time',  $adultClient->time) }}" placeholder="Time taken to close in minutes">
+                    @if($errors->has('time'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('time') }}
+                        </div>
+                    @endif
+                    <span class="help-block">{{ trans('cruds.adultClient.fields.time_helper') }}</span>
+                </div>
+                <div class="form-group">
                     <label>{{ trans('cruds.adultClient.fields.referred_to') }}</label>
                     <select class="form-control {{ $errors->has('referred_to') ? 'is-invalid' : '' }}" name="referred_to" id="referred_to">
                         <option value disabled {{ old('referred_to', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>

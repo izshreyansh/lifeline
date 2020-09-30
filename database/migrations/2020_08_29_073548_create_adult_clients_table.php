@@ -24,6 +24,7 @@ class CreateAdultClientsTable extends Migration
             $table->longText('incident_description')->nullable();
             $table->datetime('follow_up')->nullable();
             $table->string('follow_up_phone')->nullable();
+            $table->string('time')->nullable()->default('3 min');
             $table->string('referred_to')->nullable();
             $table->timestamps();
             $table->softDeletes();
