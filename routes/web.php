@@ -41,6 +41,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Non Productives
     Route::delete('non-productives/destroy', 'NonProductiveController@massDestroy')->name('non-productives.massDestroy');
     Route::resource('non-productives', 'NonProductiveController');
+
+    // Reports
+//    Route::view('reports', 'admin.reports.index')->name('reports.create');
+    Route::get('reports/{resource?}', 'ReportsController@index')->name('reports.create');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
 // Change password

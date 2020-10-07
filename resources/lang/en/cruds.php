@@ -119,6 +119,10 @@ return [
         'title'          => 'Wrap Up',
         'title_singular' => 'Wrap Up',
     ],
+    'reports'         => [
+        'title'          => 'Reports',
+        'title_singular' => 'Report',
+    ],
     'childline'      => [
         'title'          => 'ChildLine',
         'title_singular' => 'ChildLine',

@@ -41,6 +41,9 @@
                             {{ trans('cruds.adultClient.fields.status') }}
                         </th>
                         <th>
+                            {{ trans('cruds.adultClient.fields.medium') }}
+                        </th>
+                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -68,6 +71,9 @@
                             </td>
                             <td>
                                 {{ App\AdultClient::STATUS_SELECT[$adultClient->status] ?? '' }}
+                            </td>
+                            <td>
+                                {{ $adultClient->medium ?? '' }}
                             </td>
                             <td>
                                 @can('adult_client_show')

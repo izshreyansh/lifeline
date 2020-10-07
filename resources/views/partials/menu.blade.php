@@ -109,6 +109,27 @@
                 </ul>
             </li>
         @endcan
+        <li class="c-sidebar-nav-dropdown">
+            <a class="c-sidebar-nav-dropdown-toggle" href="#">
+                <i class="fa-fw fas fa-table c-sidebar-nav-icon"></i>
+                {{ trans('cruds.reports.title') }}
+            </a>
+            <ul class="c-sidebar-nav-dropdown-items">
+                <li class="c-sidebar-nav-item">
+                    <a href="{{ route('admin.reports.create',['resource'=>'lifeline']) }}" class="c-sidebar-nav-link">
+                        <i class="fa-fw fas fa-download c-sidebar-nav-icon"></i>
+                        Lifeline download
+                    </a>
+                </li>
+                <li class="c-sidebar-nav-item">
+                    <a href="{{ route('admin.reports.create',['resource'=>'childline']) }}" class="c-sidebar-nav-link">
+                        <i class="fa-fw fas fa-download c-sidebar-nav-icon"></i>
+                        Childline download
+                    </a>
+                </li>
+            </ul>
+        </li>
+
         @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
             @can('profile_password_edit')
                 <li class="c-sidebar-nav-item">

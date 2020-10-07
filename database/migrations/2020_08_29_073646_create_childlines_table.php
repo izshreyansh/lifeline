@@ -33,6 +33,7 @@ class CreateChildlinesTable extends Migration
             $table->string('guardian_phone')->nullable();
             $table->datetime('follow_up')->nullable();
             $table->string('follow_up_phone')->nullable();
+            $table->string('time')->nullable()->default('3 min');
             $table->string('referred_to')->nullable();
             $table->timestamps();
             $table->softDeletes();
