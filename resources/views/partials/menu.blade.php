@@ -2,7 +2,9 @@
 
     <div class="c-sidebar-brand d-md-down-none">
         <a class="c-sidebar-brand-full h4" href="#">
-            {{ trans('panel.site_title') }}
+            <img src="/logo.png"
+                 class="mt-4 ml-4 img-responsive w-50"
+                 alt="{{ config('app.name') }}" />
         </a>
     </div>
 

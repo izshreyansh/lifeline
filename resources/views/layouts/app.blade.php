@@ -24,6 +24,13 @@
 <body class="header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden login-page">
 <div class="c-app flex-row align-items-center">
     <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <img src="/logo.png"
+                     class="mt-4 ml-4 mb-2 img-responsive w-50"
+                     alt="{{ config('app.name') }}" />
+            </div>
+        </div>
         @yield("content")
     </div>
 </div>
