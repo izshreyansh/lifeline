@@ -17,6 +17,11 @@ class ChildlineController extends Controller
 {
     use MediaUploadingTrait;
 
+    public function callAction($method, $parameters)
+    {
+        return parent::callAction($method, array_values($parameters));
+    }
+
     public function index()
     {
         abort_if(Gate::denies('childline_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');

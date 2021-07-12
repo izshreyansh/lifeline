@@ -158,6 +158,10 @@
                     <span class="help-block">{{ trans('cruds.adultClient.fields.incident_description_helper') }}</span>
                 </div>
                 <div class="form-group">
+                    <label>Category</label>
+                    <input type="text" class="form-control disabled" readonly value="{{ $adultClient->category }}">
+                </div>
+                <div class="form-group">
                     <label for="follow_up">{{ trans('cruds.adultClient.fields.follow_up') }}</label>
                     <input class="form-control datetime {{ $errors->has('follow_up') ? 'is-invalid' : '' }}" type="text" name="follow_up" id="follow_up" value="{{ old('follow_up', $adultClient->follow_up) }}">
                     @if($errors->has('follow_up'))

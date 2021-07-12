@@ -105,6 +105,14 @@
                     </tr>
                     <tr>
                         <th>
+                            Category
+                        </th>
+                        <td>
+                            {{ $adultClient->category }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.adultClient.fields.status') }}
                         </th>
                         <td>
