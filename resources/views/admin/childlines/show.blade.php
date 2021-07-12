@@ -169,6 +169,14 @@
                     </tr>
                     <tr>
                         <th>
+                            Category
+                        </th>
+                        <td>
+                            {{ $childline->category }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.childline.fields.status') }}
                         </th>
                         <td>

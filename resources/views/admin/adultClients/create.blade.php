@@ -271,7 +271,9 @@
 
             $('#category').on('change', function() {
                 if(this.value == 'Other') {
-                    $('#custom_category_input').toggle();
+                    $('#custom_category_input').show();
+                } else {
+                    $('#custom_category_input').hide();
                 }
             });
 

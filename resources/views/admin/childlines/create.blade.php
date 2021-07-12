@@ -220,6 +220,22 @@
                     @endif
                     <span class="help-block">{{ trans('cruds.childline.fields.counselling_notes_helper') }}</span>
                 </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select class="form-control" name="category" id="category">
+                        <option value
+                                disabled {{ old('referred_to', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
+                        @foreach(config('app.categories') as $key => $label)
+                            <option
+                                value="{{ $label }}">{{ $label }}</option>
+                        @endforeach
+                    </select>
+
+                    <input class="form-control" type="text" name="category_custom" id="custom_category_input"
+                           placeholder="Category Name" />
+                </div>
+
                 <div class="form-group">
                     <label>{{ trans('cruds.childline.fields.status') }}</label>
                     <select class="form-control {{ $errors->has('status') ? 'is-invalid' : '' }}" name="status" id="status">
@@ -296,6 +312,16 @@
 @section('scripts')
     <script>
         $(document).ready(function () {
+
+            $('#custom_category_input').hide();
+            $('#category').on('change', function() {
+                if(this.value == 'Other') {
+                    $('#custom_category_input').show();
+                } else {
+                    $('#custom_category_input').hide();
+                }
+            });
+
             function SimpleUploadAdapter(editor) {
                 editor.plugins.get('FileRepository').createUploadAdapter = function(loader) {
                     return {

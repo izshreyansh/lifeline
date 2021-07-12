@@ -100,6 +100,7 @@ class Childline extends Model implements HasMedia
         'counselling_notes',
         'status',
         'incident_description',
+        'category',
         'follow_up',
         'follow_up_phone',
         'referred_to',

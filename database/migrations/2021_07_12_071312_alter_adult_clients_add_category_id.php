@@ -26,7 +26,7 @@ class AlterAdultClientsAddCategoryId extends Migration
     public function down()
     {
         Schema::table('adult_clients', function (Blueprint $table) {
-            //
+            $table->dropColumn('category');
         });
     }
 }

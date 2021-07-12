@@ -159,7 +159,7 @@
                 </div>
                 <div class="form-group">
                     <label>Category</label>
-                    <input type="text" class="form-control disabled" readonly value="{{ $adultClient->category }}">
+                    <input type="text" class="form-control disabled" readonly value="{{ $adultClient->category ?? '' }}">
                 </div>
                 <div class="form-group">
                     <label for="follow_up">{{ trans('cruds.adultClient.fields.follow_up') }}</label>

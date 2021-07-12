@@ -26,7 +26,7 @@ class AlterChildlinesAddCategoryId extends Migration
     public function down()
     {
         Schema::table('childlines', function (Blueprint $table) {
-            //
+            $table->dropColumn('category');
         });
     }
 }

@@ -40,6 +40,7 @@
                         <th>
                             {{ trans('cruds.childline.fields.gender') }}
                         </th>
+                        <th>Category</th>
                         <th>
                             {{ trans('cruds.childline.fields.status') }}
                         </th>
@@ -78,6 +79,7 @@
                             <td>
                                 {{ App\Childline::GENDER_SELECT[$childline->gender] ?? '' }}
                             </td>
+                            <td>{{ $childline->category ?? '' }}</td>
                             <td>
                                 {{ App\Childline::STATUS_SELECT[$childline->status] ?? '' }}
                             </td>

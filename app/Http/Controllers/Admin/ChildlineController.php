@@ -40,7 +40,15 @@ class ChildlineController extends Controller
 
     public function store(StoreChildlineRequest $request)
     {
-        $childline = Childline::create($request->all());
+        $childLineInput = $request->except(['category', 'category_custom']);
+
+        if($request->input('category_custom') != null || $request->input('category') == 'Other') {
+            $childLineInput['category'] = $request->input('category_custom');
+        } else {
+            $childLineInput['category'] = $request->input('category');
+        }
+
+        $childline = Childline::create($childLineInput);
 
         if ($media = $request->input('ck-media', false)) {
             Media::whereIn('id', $media)->update(['model_id' => $childline->id]);
