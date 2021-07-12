@@ -11,6 +11,13 @@ class LifelineExport implements FromQuery, WithHeadings
 {
     use Exportable;
 
+    public $category;
+
+    public function __construct(String $category)
+    {
+        $this->category = $category;
+    }
+
     public function headings(): array
     {
         return [
@@ -23,6 +30,7 @@ class LifelineExport implements FromQuery, WithHeadings
             'Gender',
             'Age',
             'Referred from',
+            'Category',
             'status',
             'time',
             'Referred To',
@@ -33,6 +41,7 @@ class LifelineExport implements FromQuery, WithHeadings
     public function query()
     {
         return AdultClient::query()
+            ->where('category', $this->category)
             ->select([
                 'first_name',
                 'last_name',
@@ -43,6 +52,7 @@ class LifelineExport implements FromQuery, WithHeadings
                 'gender',
                 'age',
                 'medium',
+                'category',
                 'status',
                 'time',
                 'referred_to',

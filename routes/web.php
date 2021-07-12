@@ -47,7 +47,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Reports
 //    Route::view('reports', 'admin.reports.index')->name('reports.create');
-    Route::get('reports/{resource?}', 'ReportsController@index')->name('reports.create');
+    Route::get('reports', 'ReportsController@preflight')->name('reports.preflight');
+    Route::post('reports/{resource?}', 'ReportsController@index')->name('reports.create');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
 // Change password

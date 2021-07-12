@@ -9,12 +9,21 @@ use Illuminate\Http\Request;
 
 class ReportsController extends Controller
 {
-    public function index($resource='lifeline')
+    public function preflight()
     {
-        if($resource == 'lifeline')
-            return (new LifelineExport)->download('lifeline.csv');
-        else
-            return (new ChildlineExport)->download('childline.csv');
+        return view('admin.reports.preflight');
     }
 
+    public function index(Request $request)
+    {
+        $request->validate([
+            'resource' => 'required',
+            'category' => 'required'
+        ]);
+
+        if($request->input('resource') == 'lifeline')
+            return (new LifelineExport($request->category))->download('lifeline.csv');
+        else
+            return (new ChildlineExport($request->category))->download('childline.csv');
+    }
 }
