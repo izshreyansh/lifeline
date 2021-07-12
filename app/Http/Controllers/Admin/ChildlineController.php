@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Childline;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Traits\MediaUploadingTrait;
+use App\Http\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyChildlineRequest;
 use App\Http\Requests\StoreChildlineRequest;
 use App\Http\Requests\UpdateChildlineRequest;

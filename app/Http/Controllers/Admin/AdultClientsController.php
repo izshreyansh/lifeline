@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\AdultClient;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Traits\MediaUploadingTrait;
+use App\Http\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyAdultClientRequest;
 use App\Http\Requests\StoreAdultClientRequest;
 use App\Http\Requests\UpdateAdultClientRequest;
@@ -35,7 +35,15 @@ class AdultClientsController extends Controller
 
     public function store(StoreAdultClientRequest $request)
     {
-        $adultClient = AdultClient::create($request->all());
+        $adultClientInput = $request->except(['category', 'category_custom']);
+
+        if($request->input('category_custom') != null || $request->input('category') == 'Other') {
+            $adultClientInput['category'] = $request->input('category_custom');
+        } else {
+            $adultClientInput['category'] = $request->input('category');
+        }
+
+        $adultClient = AdultClient::create($adultClientInput);
 
         if ($media = $request->input('ck-media', false)) {
             Media::whereIn('id', $media)->update(['model_id' => $adultClient->id]);

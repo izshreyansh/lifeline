@@ -11,7 +11,8 @@
                 @csrf
                 <div class="form-group">
                     <label class="required" for="first_name">{{ trans('cruds.adultClient.fields.first_name') }}</label>
-                    <input class="form-control {{ $errors->has('first_name') ? 'is-invalid' : '' }}" type="text" name="first_name" id="first_name" value="{{ old('first_name', '') }}" required>
+                    <input class="form-control {{ $errors->has('first_name') ? 'is-invalid' : '' }}" type="text"
+                           name="first_name" id="first_name" value="{{ old('first_name', '') }}" required>
                     @if($errors->has('first_name'))
                         <div class="invalid-feedback">
                             {{ $errors->first('first_name') }}
@@ -21,7 +22,8 @@
                 </div>
                 <div class="form-group">
                     <label class="required" for="last_name">{{ trans('cruds.adultClient.fields.last_name') }}</label>
-                    <input class="form-control {{ $errors->has('last_name') ? 'is-invalid' : '' }}" type="text" name="last_name" id="last_name" value="{{ old('last_name', '') }}" required>
+                    <input class="form-control {{ $errors->has('last_name') ? 'is-invalid' : '' }}" type="text"
+                           name="last_name" id="last_name" value="{{ old('last_name', '') }}" required>
                     @if($errors->has('last_name'))
                         <div class="invalid-feedback">
                             {{ $errors->first('last_name') }}
@@ -31,7 +33,8 @@
                 </div>
                 <div class="form-group">
                     <label for="phone">{{ trans('cruds.adultClient.fields.phone') }}</label>
-                    <input class="form-control {{ $errors->has('phone') ? 'is-invalid' : '' }}" type="text" name="phone" id="phone" value="{{ old('phone', '') }}">
+                    <input class="form-control {{ $errors->has('phone') ? 'is-invalid' : '' }}" type="text" name="phone"
+                           id="phone" value="{{ old('phone', '') }}">
                     @if($errors->has('phone'))
                         <div class="invalid-feedback">
                             {{ $errors->first('phone') }}
@@ -41,7 +44,8 @@
                 </div>
                 <div class="form-group">
                     <label for="telephone">{{ trans('cruds.adultClient.fields.telephone') }}</label>
-                    <input class="form-control {{ $errors->has('telephone') ? 'is-invalid' : '' }}" type="text" name="telephone" id="telephone" value="{{ old('telephone', '') }}">
+                    <input class="form-control {{ $errors->has('telephone') ? 'is-invalid' : '' }}" type="text"
+                           name="telephone" id="telephone" value="{{ old('telephone', '') }}">
                     @if($errors->has('telephone'))
                         <div class="invalid-feedback">
                             {{ $errors->first('telephone') }}
@@ -51,10 +55,13 @@
                 </div>
                 <div class="form-group">
                     <label class="required">{{ trans('cruds.adultClient.fields.province') }}</label>
-                    <select class="form-control {{ $errors->has('province') ? 'is-invalid' : '' }}" name="province" id="province" required>
-                        <option value disabled {{ old('province', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
+                    <select class="form-control {{ $errors->has('province') ? 'is-invalid' : '' }}" name="province"
+                            id="province" required>
+                        <option value
+                                disabled {{ old('province', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
                         @foreach(App\AdultClient::PROVINCE_SELECT as $key => $label)
-                            <option value="{{ $key }}" {{ old('province', '') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
+                            <option
+                                value="{{ $key }}" {{ old('province', '') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
                         @endforeach
                     </select>
                     @if($errors->has('province'))
@@ -67,7 +74,8 @@
 
                 <div class="form-group">
                     <label class="required" for="district">{{ trans('cruds.adultClient.fields.district') }}</label>
-                    <select class="form-control {{ $errors->has('district') ? 'is-invalid' : '' }}" type="text" name="district" id="district" value="{{ old('district', '') }}" required>
+                    <select class="form-control {{ $errors->has('district') ? 'is-invalid' : '' }}" type="text"
+                            name="district" id="district" value="{{ old('district', '') }}" required>
                     </select>
                     @if($errors->has('district'))
                         <div class="invalid-feedback">
@@ -78,10 +86,13 @@
                 </div>
                 <div class="form-group">
                     <label class="required">{{ trans('cruds.adultClient.fields.gender') }}</label>
-                    <select class="form-control {{ $errors->has('gender') ? 'is-invalid' : '' }}" name="gender" id="gender" required>
-                        <option value disabled {{ old('gender', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
+                    <select class="form-control {{ $errors->has('gender') ? 'is-invalid' : '' }}" name="gender"
+                            id="gender" required>
+                        <option value
+                                disabled {{ old('gender', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
                         @foreach(App\AdultClient::GENDER_SELECT as $key => $label)
-                            <option value="{{ $key }}" {{ old('gender', '') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
+                            <option
+                                value="{{ $key }}" {{ old('gender', '') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
                         @endforeach
                     </select>
                     @if($errors->has('gender'))
@@ -93,10 +104,13 @@
                 </div>
                 <div class="form-group">
                     <label class="required">{{ trans('cruds.adultClient.fields.age') }}</label>
-                    <select class="form-control {{ $errors->has('age') ? 'is-invalid' : '' }}" name="age" id="age" required>
-                        <option value disabled {{ old('age', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
+                    <select class="form-control {{ $errors->has('age') ? 'is-invalid' : '' }}" name="age" id="age"
+                            required>
+                        <option value
+                                disabled {{ old('age', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
                         @foreach(App\AdultClient::AGE_SELECT as $key => $label)
-                            <option value="{{ $key }}" {{ old('age', '') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
+                            <option
+                                value="{{ $key }}" {{ old('age', '') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
                         @endforeach
                     </select>
                     @if($errors->has('age'))
@@ -108,10 +122,13 @@
                 </div>
                 <div class="form-group">
                     <label class="required">{{ trans('cruds.adultClient.fields.medium') }}</label>
-                    <select class="form-control {{ $errors->has('medium') ? 'is-invalid' : '' }}" name="medium" id="medium" required>
-                        <option value disabled {{ old('medium', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
+                    <select class="form-control {{ $errors->has('medium') ? 'is-invalid' : '' }}" name="medium"
+                            id="medium" required>
+                        <option value
+                                disabled {{ old('medium', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
                         @foreach(App\AdultClient::MEDIUM_SELECT as $key => $label)
-                            <option value="{{ $key }}" {{ old('medium', 'Radio') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
+                            <option
+                                value="{{ $key }}" {{ old('medium', 'Radio') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
                         @endforeach
                     </select>
                     @if($errors->has('medium'))
@@ -128,7 +145,9 @@
                 </h4>
                 <div class="form-group">
                     <label for="counselling_notes">{{ trans('cruds.adultClient.fields.counselling_notes') }}</label>
-                    <textarea class="form-control ckeditor {{ $errors->has('counselling_notes') ? 'is-invalid' : '' }}" name="counselling_notes" id="counselling_notes">{!! old('counselling_notes') !!}</textarea>
+                    <textarea class="form-control ckeditor {{ $errors->has('counselling_notes') ? 'is-invalid' : '' }}"
+                              name="counselling_notes"
+                              id="counselling_notes">{!! old('counselling_notes') !!}</textarea>
                     @if($errors->has('counselling_notes'))
                         <div class="invalid-feedback">
                             {{ $errors->first('counselling_notes') }}
@@ -138,10 +157,13 @@
                 </div>
                 <div class="form-group">
                     <label>{{ trans('cruds.adultClient.fields.status') }}</label>
-                    <select class="form-control {{ $errors->has('status') ? 'is-invalid' : '' }}" name="status" id="status">
-                        <option value disabled {{ old('status', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
+                    <select class="form-control {{ $errors->has('status') ? 'is-invalid' : '' }}" name="status"
+                            id="status">
+                        <option value
+                                disabled {{ old('status', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
                         @foreach(App\AdultClient::STATUS_SELECT as $key => $label)
-                            <option value="{{ $key }}" {{ old('status', 'Open') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
+                            <option
+                                value="{{ $key }}" {{ old('status', 'Open') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
                         @endforeach
                     </select>
                     @if($errors->has('status'))
@@ -152,8 +174,12 @@
                     <span class="help-block">{{ trans('cruds.adultClient.fields.status_helper') }}</span>
                 </div>
                 <div class="form-group">
-                    <label for="incident_description">{{ trans('cruds.adultClient.fields.incident_description') }}</label>
-                    <textarea class="form-control ckeditor {{ $errors->has('incident_description') ? 'is-invalid' : '' }}" name="incident_description" id="incident_description">{!! old('incident_description') !!}</textarea>
+                    <label
+                        for="incident_description">{{ trans('cruds.adultClient.fields.incident_description') }}</label>
+                    <textarea
+                        class="form-control ckeditor {{ $errors->has('incident_description') ? 'is-invalid' : '' }}"
+                        name="incident_description"
+                        id="incident_description">{!! old('incident_description') !!}</textarea>
                     @if($errors->has('incident_description'))
                         <div class="invalid-feedback">
                             {{ $errors->first('incident_description') }}
@@ -162,8 +188,24 @@
                     <span class="help-block">{{ trans('cruds.adultClient.fields.incident_description_helper') }}</span>
                 </div>
                 <div class="form-group">
+                    <label for="">Category</label>
+                    <select class="form-control" name="category" id="category">
+                        <option value
+                                disabled {{ old('referred_to', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
+                        @foreach(config('app.categories') as $key => $label)
+                            <option
+                                value="{{ $label }}">{{ $label }}</option>
+                        @endforeach
+                    </select>
+
+                    <input class="form-control" type="text" name="category_custom" id="custom_category_input"
+                           placeholder="Category Name" />
+                </div>
+
+                <div class="form-group">
                     <label for="follow_up">{{ trans('cruds.adultClient.fields.follow_up') }}</label>
-                    <input class="form-control datetime {{ $errors->has('follow_up') ? 'is-invalid' : '' }}" type="text" name="follow_up" id="follow_up" value="{{ old('follow_up') }}">
+                    <input class="form-control datetime {{ $errors->has('follow_up') ? 'is-invalid' : '' }}" type="text"
+                           name="follow_up" id="follow_up" value="{{ old('follow_up') }}">
                     @if($errors->has('follow_up'))
                         <div class="invalid-feedback">
                             {{ $errors->first('follow_up') }}
@@ -173,7 +215,8 @@
                 </div>
                 <div class="form-group">
                     <label for="follow_up_phone">{{ trans('cruds.adultClient.fields.follow_up_phone') }}</label>
-                    <input class="form-control {{ $errors->has('follow_up_phone') ? 'is-invalid' : '' }}" type="text" name="follow_up_phone" id="follow_up_phone" value="{{ old('follow_up_phone', '') }}">
+                    <input class="form-control {{ $errors->has('follow_up_phone') ? 'is-invalid' : '' }}" type="text"
+                           name="follow_up_phone" id="follow_up_phone" value="{{ old('follow_up_phone', '') }}">
                     @if($errors->has('follow_up_phone'))
                         <div class="invalid-feedback">
                             {{ $errors->first('follow_up_phone') }}
@@ -183,7 +226,8 @@
                 </div>
                 <div class="form-group">
                     <label for="time">{{ trans('cruds.adultClient.fields.time') }}</label>
-                    <input class="form-control {{ $errors->has('time') ? 'is-invalid' : '' }}" type="text" name="time" id="time" value="{{ old('time', '') }}" placeholder="Time taken to close in minutes">
+                    <input class="form-control {{ $errors->has('time') ? 'is-invalid' : '' }}" type="text" name="time"
+                           id="time" value="{{ old('time', '') }}" placeholder="Time taken to close in minutes">
                     @if($errors->has('time'))
                         <div class="invalid-feedback">
                             {{ $errors->first('time') }}
@@ -193,10 +237,13 @@
                 </div>
                 <div class="form-group">
                     <label>{{ trans('cruds.adultClient.fields.referred_to') }}</label>
-                    <select class="form-control {{ $errors->has('referred_to') ? 'is-invalid' : '' }}" name="referred_to" id="referred_to">
-                        <option value disabled {{ old('referred_to', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
+                    <select class="form-control {{ $errors->has('referred_to') ? 'is-invalid' : '' }}"
+                            name="referred_to" id="referred_to">
+                        <option value
+                                disabled {{ old('referred_to', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
                         @foreach(App\AdultClient::REFERRED_TO_SELECT as $key => $label)
-                            <option value="{{ $key }}" {{ old('referred_to', '') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
+                            <option
+                                value="{{ $key }}" {{ old('referred_to', '') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
                         @endforeach
                     </select>
                     @if($errors->has('referred_to'))
@@ -215,20 +262,26 @@
         </div>
     </div>
 
-
-
 @endsection
 
 @section('scripts')
     <script>
         $(document).ready(function () {
+            $('#custom_category_input').hide();
+
+            $('#category').on('change', function() {
+                if(this.value == 'Other') {
+                    $('#custom_category_input').toggle();
+                }
+            });
+
             function SimpleUploadAdapter(editor) {
-                editor.plugins.get('FileRepository').createUploadAdapter = function(loader) {
+                editor.plugins.get('FileRepository').createUploadAdapter = function (loader) {
                     return {
-                        upload: function() {
+                        upload: function () {
                             return loader.file
                                 .then(function (file) {
-                                    return new Promise(function(resolve, reject) {
+                                    return new Promise(function (resolve, reject) {
                                         // Init request
                                         var xhr = new XMLHttpRequest();
                                         xhr.open('POST', '/admin/adult-clients/ckmedia', true);
@@ -237,10 +290,14 @@
                                         xhr.responseType = 'json';
 
                                         // Init listeners
-                                        var genericErrorText = `Couldn't upload file: ${ file.name }.`;
-                                        xhr.addEventListener('error', function() { reject(genericErrorText) });
-                                        xhr.addEventListener('abort', function() { reject() });
-                                        xhr.addEventListener('load', function() {
+                                        var genericErrorText = `Couldn't upload file: ${file.name}.`;
+                                        xhr.addEventListener('error', function () {
+                                            reject(genericErrorText)
+                                        });
+                                        xhr.addEventListener('abort', function () {
+                                            reject()
+                                        });
+                                        xhr.addEventListener('load', function () {
                                             var response = xhr.response;
 
                                             if (!response || xhr.status !== 201) {
@@ -249,11 +306,11 @@
 
                                             $('form').append('<input type="hidden" name="ck-media[]" value="' + response.id + '">');
 
-                                            resolve({ default: response.url });
+                                            resolve({default: response.url});
                                         });
 
                                         if (xhr.upload) {
-                                            xhr.upload.addEventListener('progress', function(e) {
+                                            xhr.upload.addEventListener('progress', function (e) {
                                                 if (e.lengthComputable) {
                                                     loader.uploadTotal = e.total;
                                                     loader.uploaded = e.loaded;
@@ -284,13 +341,15 @@
 
             var districts = [];
 
-            $.getJSON('/js/province_district.json').done((data)=> {districts =  data});
+            $.getJSON('/js/province_district.json').done((data) => {
+                districts = data
+            });
 
-            $( "#province" ).change(function() {
+            $("#province").change(function () {
 
                 $("#district option").remove();
 
-                $.each(districts[$(this).val()], function(key, value) {
+                $.each(districts[$(this).val()], function (key, value) {
                     $("#district").append($("<option />").val(value).text(value));
                 });
             });

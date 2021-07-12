@@ -37,6 +37,7 @@
                         <th>
                             {{ trans('cruds.adultClient.fields.gender') }}
                         </th>
+                        <th>Category</th>
                         <th>
                             {{ trans('cruds.adultClient.fields.status') }}
                         </th>
@@ -69,6 +70,7 @@
                             <td>
                                 {{ App\AdultClient::GENDER_SELECT[$adultClient->gender] ?? '' }}
                             </td>
+                            <td>{{ $adultClient->category ?? '' }}</td>
                             <td>
                                 {{ App\AdultClient::STATUS_SELECT[$adultClient->status] ?? '' }}
                             </td>
