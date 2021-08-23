@@ -206,6 +206,31 @@
                     @endif
                     <span class="help-block">{{ trans('cruds.adultClient.fields.referred_to_helper') }}</span>
                 </div>
+
+                <div class="form-group">
+                    <label>Referred to Name</label>
+                    <input class="form-control {{ $errors->has('referred_to_name') ? 'is-invalid' : '' }}" type="text"
+                           name="referred_to_name" id="referred_to_name" value="{{ old('referred_to_name', $adultClient->referred_to_name) }}"
+                           placeholder="Referred to Name">
+                    @if($errors->has('referred_to_name'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('referred_to_name') }}
+                        </div>
+                    @endif
+                </div>
+
+                <div class="form-group">
+                    <label>Referred to Contact</label>
+                    <input class="form-control {{ $errors->has('referred_to_contact') ? 'is-invalid' : '' }}" type="text"
+                           name="referred_to_contact" id="referred_to_contact" value="{{ old('referred_to_contact', $adultClient->referred_to_contact) }}"
+                           placeholder="Referred to Contact">
+                    @if($errors->has('referred_to_contact'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('referred_to_contact') }}
+                        </div>
+                    @endif
+                </div>
+
                 <div class="form-group">
                     <button class="btn btn-danger" type="submit">
                         {{ trans('global.save') }}

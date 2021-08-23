@@ -107,6 +107,8 @@ class Childline extends Model implements HasMedia
         'created_at',
         'updated_at',
         'deleted_at',
+        'referred_to_name',
+        'referred_to_contact'
     ];
 
     protected function serializeDate(DateTimeInterface $date)

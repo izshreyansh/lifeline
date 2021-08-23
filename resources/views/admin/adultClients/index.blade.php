@@ -19,9 +19,7 @@
                 <table class=" table table-bordered table-striped table-hover datatable datatable-AdultClient">
                     <thead>
                     <tr>
-                        <th width="10">
-
-                        </th>
+                        <th width="10"></th>
                         <th>
                             {{ trans('cruds.adultClient.fields.id') }}
                         </th>
@@ -90,13 +88,13 @@
                                     </a>
                                 @endcan
 
-                                @can('adult_client_delete')
+                                {{--@can('adult_client_delete')
                                     <form action="{{ route('admin.adult-clients.destroy', $adultClient->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
                                     </form>
-                                @endcan
+                                @endcan--}}
 
                             </td>
 
@@ -116,7 +114,7 @@
     <script>
         $(function () {
             let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-            @can('adult_client_delete')
+            {{--@can('adult_client_delete')
             let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
             let deleteButton = {
                 text: deleteButtonTrans,
@@ -144,7 +142,7 @@
                 }
             }
             dtButtons.push(deleteButton)
-            @endcan
+            @endcan--}}
 
             $.extend(true, $.fn.dataTable.defaults, {
                 orderCellsTop: true,

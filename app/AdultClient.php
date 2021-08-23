@@ -69,7 +69,9 @@ class AdultClient extends Model implements HasMedia
         'created_at',
         'updated_at',
         'deleted_at',
-        'category'
+        'category',
+        'referred_to_name',
+        'referred_to_contact'
     ];
 
     const REFERRED_TO_SELECT = [
