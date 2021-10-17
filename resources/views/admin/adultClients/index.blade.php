@@ -82,11 +82,11 @@
                                     </a>
                                 @endcan
 
-                                @can('adult_client_edit')
+                               {{-- @can('adult_client_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.adult-clients.edit', $adultClient->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
-                                @endcan
+                                @endcan--}}
 
                                 {{--@can('adult_client_delete')
                                     <form action="{{ route('admin.adult-clients.destroy', $adultClient->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">

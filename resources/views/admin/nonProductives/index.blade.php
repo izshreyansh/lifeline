@@ -52,11 +52,11 @@
                                     </a>
                                 @endcan
 
-                                @can('non_productive_edit')
+                                {{--@can('non_productive_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.non-productives.edit', $nonProductive->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
-                                @endcan
+                                @endcan--}}
 
                                 {{--@can('non_productive_delete')
                                     <form action="{{ route('admin.non-productives.destroy', $nonProductive->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">

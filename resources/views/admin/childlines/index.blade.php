@@ -96,11 +96,11 @@
                                     </a>
                                 @endcan
 
-                                @can('childline_edit')
+                                {{--@can('childline_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.childlines.edit', $childline->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
-                                @endcan
+                                @endcan--}}
 
                                 {{--@can('childline_delete')
                                     <form action="{{ route('admin.childlines.destroy', $childline->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
