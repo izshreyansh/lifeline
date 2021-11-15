@@ -112,6 +112,13 @@
             </li>
         @endcan
         <li class="c-sidebar-nav-item">
+            <a href="{{ route("admin.import.create") }}" class="c-sidebar-nav-link">
+                <i class="fa-fw fas fa-table c-sidebar-nav-icon"></i>
+                Import Records
+            </a>
+        </li>
+
+        <li class="c-sidebar-nav-item">
             <a href="{{ route("admin.reports.create") }}" class="c-sidebar-nav-link">
                 <i class="fa-fw fas fa-table c-sidebar-nav-icon"></i>
                 {{ trans('cruds.reports.title') }}

@@ -29,6 +29,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
     Route::resource('users', 'UsersController');
 
+    // Import Leads
+    Route::get('imports.create', 'ImportController@create')->name('import.create');
+    Route::post('imports.store', 'ImportController@store')->name('import.store');
+
     // Adult Clients
     Route::delete('adult-clients/destroy', 'AdultClientsController@massDestroy')->name('adult-clients.massDestroy');
     Route::post('adult-clients/media', 'AdultClientsController@storeMedia')->name('adult-clients.storeMedia');
