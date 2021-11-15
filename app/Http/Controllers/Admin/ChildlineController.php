@@ -26,7 +26,10 @@ class ChildlineController extends Controller
     {
         abort_if(Gate::denies('childline_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $childlines = Childline::all();
+        if(auth()->user()->is_admin)
+            $childlines = Childline::all();
+        else
+            $childlines = Childline::where('user_id', auth()->user()->id)->paginate();
 
         return view('admin.childlines.index', compact('childlines'));
     }
@@ -49,6 +52,8 @@ class ChildlineController extends Controller
         }
 
         $childline = Childline::create($childLineInput);
+
+        $childline->createdby()->associate(auth()->user())->save();
 
         if ($media = $request->input('ck-media', false)) {
             Media::whereIn('id', $media)->update(['model_id' => $childline->id]);

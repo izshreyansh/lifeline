@@ -82,19 +82,17 @@
                                     </a>
                                 @endcan
 
-                               {{-- @can('adult_client_edit')
+                               {{--@if(auth()->user()->is_admin)
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.adult-clients.edit', $adultClient->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
-                                @endcan--}}
 
-                                {{--@can('adult_client_delete')
                                     <form action="{{ route('admin.adult-clients.destroy', $adultClient->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
                                     </form>
-                                @endcan--}}
+                                @endif--}}
 
                             </td>
 

@@ -122,4 +122,9 @@ class AdultClient extends Model implements HasMedia
     {
         $this->attributes['follow_up'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
+
+    public function createdby()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }

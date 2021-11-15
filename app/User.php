@@ -46,10 +46,10 @@ class User extends Authenticatable
         return $date->format('Y-m-d H:i:s');
     }
 
-    public function getIsAdminAttribute()
+    /*public function getIsAdminAttribute()
     {
         return $this->roles()->where('id', 1)->exists();
-    }
+    }*/
 
     public function getEmailVerifiedAtAttribute($value)
     {
@@ -76,5 +76,15 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(Role::class);
+    }
+
+    public function getRoleAttribute()
+    {
+        return $this->roles()->exists() ? $this->roles()->first()->title : null;
+    }
+
+    public function getIsAdminAttribute()
+    {
+        return $this->role == 'Admin';
     }
 }

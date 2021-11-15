@@ -26,7 +26,10 @@ class AdultClientsController extends Controller
     {
         abort_if(Gate::denies('adult_client_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $adultClients = AdultClient::all();
+        if(auth()->user()->is_admin)
+            $adultClients = AdultClient::all();
+        else
+            $adultClients = AdultClient::where('user_id', auth()->user()->id)->paginate();
 
         return view('admin.adultClients.index', compact('adultClients'));
     }
@@ -49,6 +52,8 @@ class AdultClientsController extends Controller
         }
 
         $adultClient = AdultClient::create($adultClientInput);
+
+        $adultClient->createdby()->associate(auth()->user())->save();
 
         if ($media = $request->input('ck-media', false)) {
             Media::whereIn('id', $media)->update(['model_id' => $adultClient->id]);
