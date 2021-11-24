@@ -33,6 +33,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('imports.create', 'ImportController@create')->name('import.create');
     Route::post('imports.store', 'ImportController@store')->name('import.store');
 
+    Route::get('export', 'ExportController')->name('export');
+
     // Adult Clients
     Route::delete('adult-clients/destroy', 'AdultClientsController@massDestroy')->name('adult-clients.massDestroy');
     Route::post('adult-clients/media', 'AdultClientsController@storeMedia')->name('adult-clients.storeMedia');

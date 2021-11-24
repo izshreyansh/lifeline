@@ -119,6 +119,13 @@
         </li>
 
         <li class="c-sidebar-nav-item">
+            <a href="{{ route("admin.export") }}" class="c-sidebar-nav-link">
+                <i class="fa-fw fas fa-download c-sidebar-nav-icon"></i>
+                Export Records
+            </a>
+        </li>
+
+        <li class="c-sidebar-nav-item">
             <a href="{{ route("admin.reports.create") }}" class="c-sidebar-nav-link">
                 <i class="fa-fw fas fa-table c-sidebar-nav-icon"></i>
                 {{ trans('cruds.reports.title') }}
